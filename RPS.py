@@ -2,6 +2,8 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from random import randint
 
+rules = "1.Rock beats Sciccors, Sciccors beats Paper, Paper beats Rock\n2.First to score 10 is the winner\n3.Game Ends after scoring 10 points"
+
 # Window Setup
 window = tk.Tk()
 window.geometry('640x480')
@@ -133,14 +135,23 @@ main.pack(fill='both',expand=True)
 main_title = tk.Label(main, text="ROCK PAPER SCISSOR", font=('Arial Rounded MT Bold',20), bg='#E8BCB9')
 main_title.pack()
 main_img_label = tk.Label(main, image=m_img, bg='#E8BCB9', relief='solid', bd=2)
-main_img_label.pack(pady=80)
+main_img_label.place(x=125,y=65)
 
-user_name = tk.Entry(main, width=20, bg='#E8BCB9')
+get_info = tk.Label(main, text="Enter You Name", font=('Arial Rounded MT Bold',16), bg='#E8BCB9')
+get_info.place(x=225,y=290)
+
+user_name = tk.Entry(main, width=25, bg='#E8BCB9')
 user_name.config(bg='#FBE4D8')
-user_name.pack(pady=10)
+user_name.place(x=233,y=325)
 
 name_submit = tk.Button(main, text='Start', width=20,command=name_submit)
-name_submit.pack()
+name_submit.place(x=236,y=360)
+
+rules_name = tk.Label(main, text="Rules", font=('Arial Rounded MT Bold',14), bg='#E8BCB9')
+rules_name.place(x=280,y=390)
+
+rules_info = tk.Label(main, text=rules, font=('Arial Rounded MT Bold',12), bg='#E8BCB9')
+rules_info.place(x=60,y=415)
 
 # PAGE 2 GAME STARTS HERE
 game = tk.Frame(window, bg='#FFA586')
@@ -161,19 +172,19 @@ bot_score_label = tk.Label(game, font=('Arial Rounded MT Bold',16), bg='#FFA586'
 bot_score_label.place(x=490,y=50)
 
 # rock_sel = tk.Label(game, image=rock, bg='#FFA586', relief='solid', bd=2)
-rock_button = tk.Button(game, image=rock, command=rock_button)
+rock_button = tk.Button(game, image=rock, command=rock_button, relief='solid', bd=2)
 rock_button.place(x=75,y=300)
 
 # paper_sel = tk.Label(game, image=paper, bg='#FFA586', relief='solid', bd=2)
-paper_button = tk.Button(game, image=paper, command=paper_button)
+paper_button = tk.Button(game, image=paper, command=paper_button ,relief='solid', bd=2)
 paper_button.place(x=265,y=300)
 
 # scissor_sel = tk.Label(game, image=scissors, bg='#FFA586', relief='solid', bd=2)
-scissor_button = tk.Button(game, image=scissors, command=sciccor_button)
+scissor_button = tk.Button(game, image=scissors, command=sciccor_button, relief='solid', bd=2)
 scissor_button.place(x=450,y=300)
 
 winner_label = tk.Label(game, font=('Arial Rounded MT Bold',16), bg='#FFA586')
-winner_label.place(x=250,y=450)
+winner_label.place(x=175,y=425)
 
 # Result Page
 result = tk.Frame(window, bg='#C38EB4')
